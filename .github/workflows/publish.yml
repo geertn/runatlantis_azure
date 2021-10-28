@@ -35,4 +35,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/geertn/runatlantis_terraform-compliance/runatlantis_terraform-compliance:${{ github.sha }}
+          tags:
+            - ghcr.io/geertn/runatlantis_terraform-compliance/runatlantis_terraform-compliance:${{ github.sha }}
+            - ghcr.io/geertn/runatlantis_terraform-compliance/runatlantis_terraform-compliance:latest
