@@ -1,4 +1,4 @@
-FROM runatlantis/atlantis:v0.19.1
+FROM ghcr.io/runatlantis/atlantis:v0.19.2
 
 RUN apk add --no-cache \
         ca-certificates \
