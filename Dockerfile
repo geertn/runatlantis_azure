@@ -21,5 +21,5 @@ RUN curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.2.1/po
 
 RUN pwsh -Command Set-PSRepository -Name PSGallery -InstallationPolicy Trusted && pwsh -Command Install-Module -Name DataGateway && pwsh -Command Set-PSRepository -Name PSGallery -InstallationPolicy Untrusted
 
-RUN curl -L https://github.com/Azure/kubelogin/releases/download/v0.0.20/kubelogin-linux-amd64.zip -o /tmp/kubelogin.zip && \
+RUN curl -L https://github.com/Azure/kubelogin/releases/download/v0.0.24/kubelogin-linux-amd64.zip -o /tmp/kubelogin.zip && \
     unzip /tmp/kubelogin.zip -d /tmp/ && mv /tmp/bin/linux_amd64/kubelogin /usr/local/bin/ && chmod +x /usr/local/bin/kubelogin && rm -rf /tmp/bin/
