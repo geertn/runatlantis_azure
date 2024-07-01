@@ -1,5 +1,6 @@
 FROM ghcr.io/runatlantis/atlantis:v0.28.3
 
+
 RUN apk add --no-cache \
         ca-certificates \
         less \
