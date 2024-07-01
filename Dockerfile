@@ -2,7 +2,6 @@ FROM ghcr.io/runatlantis/atlantis:v0.28.3
 
 USER root
 
-
 RUN apk add --no-cache \
         ca-certificates \
         less \
@@ -19,7 +18,7 @@ RUN apk add --no-cache \
         curl &&  \
     apk -X "https://dl-cdn.alpinelinux.org/alpine/edge/main" add --no-cache lttng-ust
 
-RUN curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.2.21/powershell-7.2.21-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz && \
+RUN curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.2.21/powershell-7.2.21-linux-musl-x64.tar.gz -o /tmp/powershell.tar.gz && \
     mkdir -p /opt/microsoft/powershell/7 && tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7 && chmod +x /opt/microsoft/powershell/7/pwsh && ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh && rm -f /tmp/powershell.tar.gz
 
 RUN pwsh -Command Set-PSRepository -Name PSGallery -InstallationPolicy Trusted && pwsh -Command Install-Module -Name DataGateway && pwsh -Command Set-PSRepository -Name PSGallery -InstallationPolicy Untrusted
